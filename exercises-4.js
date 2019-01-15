@@ -1,5 +1,25 @@
 function cariModus(arr) {
     
+    var hasil = 0;
+    var maxCount = 0;
+
+    for(var i = 0; i < arr.length;i++){
+      var count = 0;
+      for(var j = 0; j < arr.length;j++){
+        if(arr[i]===arr[j] && i !== j){
+          count++
+          if(count > maxCount){
+            maxCount = count;
+            hasil = arr[i]
+          }
+        }
+      }
+    }
+    if(hasil === 0 || maxCount === arr.length - 1){
+      return -1
+    }else{
+      return hasil
+    }
 }
   
   // TEST CASES
