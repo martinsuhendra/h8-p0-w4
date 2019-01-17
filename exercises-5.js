@@ -6,7 +6,11 @@ function ubahHuruf(kata) {
     for(var i = 0; i < kata.length;i++){
         for(var j = 0; j < alphabet.length;j++){
             if(kata[i] === alphabet[j]){
-                result += alphabet[j+1];
+                if(alphabet[j+1] === undefined){
+                    result += alphabet[0];
+                }else{
+                    result += alphabet[j+1];
+                }
             }
         }
     }
@@ -19,3 +23,4 @@ function ubahHuruf(kata) {
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
   console.log(ubahHuruf('semangat')); // tfnbohbu
+ 
