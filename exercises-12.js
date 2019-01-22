@@ -5,23 +5,28 @@ function countProfit(shoppers) {
                      ];
   
     var result = [];
+
+    if(shoppers.length === 0){
+        return result;
+    }else{
     
-    for(var i = 0; i < listBarang.length;i++){
-        var obj = {};
-        obj.product = listBarang[i][0];
-        obj.shoppers = [];
-        obj.leftOver = listBarang[i][2];
-        obj.totalProfit = 0;
-            for(key in shoppers){
-                if(shoppers[key].product === obj.product && obj.leftOver >= shoppers[key].amount){
-                    obj.shoppers.push(shoppers[key].name);
-                    obj.leftOver -= shoppers[key].amount;
-                    obj.totalProfit = (listBarang[i][2] - obj.leftOver) * listBarang[i][1];
+        for(var i = 0; i < listBarang.length;i++){
+            var obj = {};
+            obj.product = listBarang[i][0];
+            obj.shoppers = [];
+            obj.leftOver = listBarang[i][2];
+            obj.totalProfit = 0;
+                for(key in shoppers){
+                    if(shoppers[key].product === obj.product && obj.leftOver >= shoppers[key].amount){
+                        obj.shoppers.push(shoppers[key].name);
+                        obj.leftOver -= shoppers[key].amount;
+                        obj.totalProfit = (listBarang[i][2] - obj.leftOver) * listBarang[i][1];
+                    }
                 }
-            }
-        result.push(obj)
-    }
-    return result;
+            result.push(obj)
+        }
+        return result;
+    }   
   }
   
   // TEST CASES
