@@ -7,7 +7,7 @@ function countProfit(shoppers) {
     var result = [];
 
     if(shoppers.length === 0){
-        return result;
+        return result;          //Mengkoreksi kesalahan dengan menambahkan kondisi jika isi shoppers kosong.
     }else{
     
         for(var i = 0; i < listBarang.length;i++){
